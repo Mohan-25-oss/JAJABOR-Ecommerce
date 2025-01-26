@@ -19,7 +19,7 @@
       <span class="ml-3 text-xl">Tailbacks </span>
     </a> 
       <nav
-          class="md:ml-4 MD:py-1 MD:pl-4 MD:border-gray-400 flex-wrap items-center text-base justify-center">
+          class="md:ml-4 md:py-1 md:pl-4 md:border-gray-400  md:flex-wrap items-center text-base justify-center">
           <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
           <a href="about.html" class="mr-5 hover:text-gray-900">About</a>
           <a href="shop.html" class="mr-5 hover:text-gray-900">Shop</a>
@@ -31,10 +31,10 @@
         class="block md:hidden"
         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/>
       </svg>
-      <svg id="close-btn" class="hidden"
+      <svg id="close-btn" class="md:hidden"
         xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5"/></svg>
       <nav id="mobile-navbar"
-      class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-gray-400 hidden md flex-col flex-wrap items-center text-base justify-end">
+      class="mr-auto ml-4 py-1 pl-4 border-gray-400 hidden flex-col flex-wrap items-center text-base justify-end">
       <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
       <a href="about.html" class="mr-5 hover:text-gray-900">About</a>
       <a href="shop.html" class="mr-5 hover:text-gray-900">Shop</a>
@@ -43,7 +43,7 @@
     </nav>
     </div>
 
-    <button class="inline-flex items-end bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 mt-0"> Cart
+    <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Cart
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path a="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
@@ -52,8 +52,10 @@
   <!-----Navbar End-------->
   <!-----HERO SECTION Start---->
 </header>
-    <section class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div id="first-slide"
+    class="text-gray-600 body-font">
+  <div 
+  class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Trendy Winter Collection
         <br class="hidden lg:inline-block">Readymade Stylish
@@ -69,9 +71,10 @@
       <img class="object-cover object-center rounded h-80" alt="hero" src="https://images.pexels.com/photos/6815357/pexels-photo-6815357.jpeg?auto=compress&cs=tinysrgb&w=400">
     </div>
   </div>
-</section>
+    </div>
     <!-----HERO SECTION 2nd pic---->
-      <section class="text-gray-600 body-font">
+      <div id="Second-slide" 
+      class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Trendy Winter Collection
@@ -88,9 +91,9 @@
       <img class="object-cover object-center rounded h-80" alt="hero" src="https://images.pexels.com/photos/6012048/pexels-photo-6012048.jpeg?auto=compress&cs=tinysrgb&w=400">
     </div>
   </div>
-</section>
+</div>
       <!-----HERO SECTION 3rd pic---->
-<section class="text-gray-600 body-font">
+<div id="Third-slide" class="text-gray-600 body-font">
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start     md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">   Evening Elegance
@@ -107,13 +110,21 @@
       <img class="object-cover object-center rounded h-80" alt="hero" src="https://images.pexels.com/photos/30249821/pexels-photo-30249821/free-photo-of-fashionable-man-walking-on-urban-bridge.jpeg?auto=compress&cs=tinysrgb&w=600">
       </div>
   </div>
-</section>
+</div>
 <!-----HERO SECTION END---->
-
-
+<!-----Navigation start-->
+<div class="flex items-center justify-center">
+  <button id="prev">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5.536 21.886a1 1 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886"/></svg>
+</button>
+<button id="next">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m4.431 12.822l13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645"/></svg>
+</button>
+</div>
+<!-----Navigation end-->
 <!-----Product Section Start------>
 <section class="text-gray-600 body-font"> 
-  <div class="container px-5 py-24 mx-auto">
+  <div id="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap -m-4">
       <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
         <a href="productdetails.html" class="block relative h-48 rounded overflow-hidden">

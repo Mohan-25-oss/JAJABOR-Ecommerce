@@ -1,13 +1,14 @@
 // fetch All Products
-const productContainer = document.getElementById("products-container");
+const productContainer = document.getElementById("product-container");
 fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
   .then((products) => {
     console.log(products)
-    const productsItems = products.map((product) => {
-      const productsItemHTML = `
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a href="productdetails.html" class="block relative h-48 rounded overflow-hidden">
+    const productItem = products.map((product) => {
+      const productItemHTML =
+      `
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a href="product_details.html?productId=${product.id}" class="block relative h-48 rounded overflow-hidden">
             <img alt="ecommerce" class="object-cover object-center w-full h-full &"src="${product.image}">
             </a>
             <div class="mt-4">
@@ -17,12 +18,11 @@ fetch("https://fakestoreapi.com/products")
             </div>
         </div>
         `;
-      return productsItemHTML;
+      return productItemHTML;
     });
-    console.log(productsItems);
-    const productsHTML = productsItems.join("");
-    console.log(productsHTML);
-    productsContainer.innerHTML = productsHTML;
+    // console.log(productsItems);
+    console.log(productItem.join(""));
+    productContainer.innerHTML=productItem.join("");
   });
 
 
@@ -52,7 +52,8 @@ hamburgerBtn.addEventListener("click", function () {
 
 closeBtn.addEventListener("click", function () {
 mobileNavbar.classList.add("hidden");
-mobileNavbar.classList.remove("flex");
+  mobileNavbar.classList.remove("flex");
+  
 closeBtn.classList.add("hidden");
 hamburgerBtn.classList.add("block");
 hamburgerBtn.classList.remove("hidden");
@@ -108,7 +109,7 @@ const firstSlide = document.getElementById("first-slide");
 const secondSlide = document.querySelector("#second-slide");
 const thirdSlide = document.getElementById("third-slide");
 
-const preBtn = document.getElementById("prev");
+const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
 // console.log(firstSlide);
@@ -120,7 +121,7 @@ const nextBtn = document.getElementById("next");
 // console.log(preBtn);
 // console.log(nextBtn);
 
-preBtn.addEventListener("click", function () {
+prevBtn.addEventListener("click", function () {
   // console.log("Previous Button is clicked")
   const isFirstSlideActive = getComputedStyle(firstSlide).display == "flex";
   const isSecondSlideActive = getComputedStyle(secondSlide).display == "flex";
