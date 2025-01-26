@@ -69,9 +69,9 @@ hamburgerBtn.classList.remove("hidden");
  *
  */
 
-const shopBtn1 = document.querySelector(".shop-btn-1");
+// const shopBtn1 = document.querySelector(".shop-btn-1");
 // console.log(shopBtn1);
-shopBtn1.addEventListener("click", function () {
+shopBtn1.addEventListener("click", function(){
   // console.log("This shop button is clicked");
 console.log(window.location.href);
 console.log("navigating to shop.html");
