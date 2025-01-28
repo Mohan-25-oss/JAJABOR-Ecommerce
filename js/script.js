@@ -25,35 +25,35 @@
 //   });
 // const productsContainer = document.getElementById("products-container");
 // fetch("https://fakestoreapi.com/products/categories");
+
 // // Hamburger menu start
-// const hamburgerBtn = document.getElementById("hamburger-menu");
-// const mobileNavbar = document.getElementById("mobile-navbar");
-// const closeBtn = document.getElementById("close-btn");
-// console.log(mobileNavbar);
-// console.log(hamburgerBtn);
-// hamburgerBtn.addEventListener("click", function () {
-//   console.log(mobileNavbar.classList);
-//   mobileNavbar.classList.remove("hidden");
-//   mobileNavbar.classList.add("flex");
-//   hamburgerBtn.classList.add("hidden");
-//   closeBtn.classList.remove("hidden");
-//   console.log(mobileNavbar.classList);
-// });
+const hambuergerBtn = document.getElementById("hambuerger-menu");
+const mobileNavbar = document.getElementById("mobile-navbar");
+const clostBtn = document.getElementById("close-btn");
+console.log(mobileNavbar);
+console.log(hambuergerBtn);
+hambuergerBtn.addEventListener("click", function () {
+  console.log(mobileNavbar.classList);
+  mobileNavbar.classList.remove("hidden");
+  mobileNavbar.classList.add("flex");
+  hambuergerBtn.classList.add("hidden");
+  clostBtn.classList.remove("hidden");
+  console.log(mobileNavbar.classList);
+});
 
 // hamburgerBtn.addEventListener("click", function(){
-// //   console.log(mobileNavbar.classList);
-//     mobileNavbar.classList.toggle("hidden");
+//   console.log(mobileNavbar.classList);
+    // mobileNavbar.classList.toggle("hidden");
 //     mobileNavbar.classList.toggle("flex");
 // });
+clostBtn.addEventListener("click", function () {
+  mobileNavbar.classList.add("hidden");
+  mobileNavbar.classList.remove("flex");
 
-// closeBtn.addEventListener("click", function () {
-//   mobileNavbar.classList.add("hidden");
-//   mobileNavbar.classList.remove("flex");
-
-//   closeBtn.classList.add("hidden");
-//   hamburgerBtn.classList.add("block");
-//   hamburgerBtn.classList.remove("hidden");
-// });
+  clostBtn.classList.add("hidden");
+  hambuergerBtn.classList.add("block");
+  hambuergerBtn.classList.remove("hidden");
+});
 
 // Hamburger menu end
 
@@ -91,8 +91,8 @@ shopBtn3.addEventListener("click", function () {
   console.log("navigating to shop.html");
   window.location.href = "http://127.0.0.1:5500/shop.html";
 });
-// Shop Button End.............
-/**   Next and Prev Button Start.........
+// Shop Button End.
+/**   Next and Prev Button/ Navigation Button Start...
  * 1. select 3 slide
  * 2. close 2 slide
  * 3. 2 button identify
@@ -103,6 +103,8 @@ shopBtn3.addEventListener("click", function () {
 const firstSlide = document.getElementById("first-slide");
 const secondSlide = document.querySelector("#second-slide");
 const thirdSlide = document.getElementById("third-slide");
+
+firstSlide.style.display = "flex";
 secondSlide.style.display = "none";
 thirdSlide.style.display = "none";
 
@@ -112,9 +114,9 @@ const nextBtn = document.getElementById("next");
 // console.log(firstSlide);
 // console.log(secondSlide);
 // console.log(thirdSlide);
-// firstSlide.style.display = "flex";
-// secondSlide.style.display = "flex";
-// thirdSlide.style.display = "flex";
+firstSlide.style.display = "flex";
+secondSlide.style.display = "flex";
+thirdSlide.style.display = "flex";
 // console.log(prevBtn);
 // console.log(nextBtn);
 
@@ -125,6 +127,19 @@ prevBtn.addEventListener("click", function () {
   const isThirdSlideActive = getComputedStyle(thirdSlide).display == "flex";
   console.log(isFirstSlideActive, isSecondSlideActive, isThirdSlideActive);
   console.log(isFirstSlideActive);
+  if (getComputedStyle(firstSlide).display == "flex") {
+    firstSlide.style.display = "none";
+    thirdSlide.style.display = "none";
+    secondSlide.style.display = "flex";
+  } else if (getComputedStyle(secondSlide).display == "flex") {
+    secondSlide.style.display = "none";
+    firstSlide.style.display = "none";
+    thirdSlide.style.display = "flex";
+  } else if (getComputedStyle(thirdSlide).display == "flex") {
+    secondSlide.style.display = "none";
+    thirdSlide.style.display = "none";
+    firstSlide.style.display = "flex";
+  }
 });
 
 nextBtn.addEventListener("click", function () {
