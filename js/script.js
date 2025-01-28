@@ -30,9 +30,11 @@
 const hambuergerBtn = document.getElementById("hambuerger-menu");
 const mobileNavbar = document.getElementById("mobile-navbar");
 const clostBtn = document.getElementById("close-btn");
-console.log(mobileNavbar);
-console.log(hambuergerBtn);
+// console.log(mobileNavbar);
+// console.log(hambuergerBtn);
+// console.log(clostBtn);
 hambuergerBtn.addEventListener("click", function () {
+  // console.log("hambuerger button is clicked");
   console.log(mobileNavbar.classList);
   mobileNavbar.classList.remove("hidden");
   mobileNavbar.classList.add("flex");
@@ -41,19 +43,19 @@ hambuergerBtn.addEventListener("click", function () {
   console.log(mobileNavbar.classList);
 });
 
-// hamburgerBtn.addEventListener("click", function(){
+// hambuergerBtn.addEventListener("click", function(){
 //   console.log(mobileNavbar.classList);
-    // mobileNavbar.classList.toggle("hidden");
+//     mobileNavbar.classList.toggle("hidden");
 //     mobileNavbar.classList.toggle("flex");
 // });
-clostBtn.addEventListener("click", function () {
-  mobileNavbar.classList.add("hidden");
-  mobileNavbar.classList.remove("flex");
+// clostBtn.addEventListener("click", function () {
+//   mobileNavbar.classList.add("hidden");
+//   mobileNavbar.classList.remove("flex");
 
-  clostBtn.classList.add("hidden");
-  hambuergerBtn.classList.add("block");
-  hambuergerBtn.classList.remove("hidden");
-});
+//   clostBtn.classList.add("hidden");
+//   hambuergerBtn.classList.add("block");
+//   hambuergerBtn.classList.remove("hidden");
+// });
 
 // Hamburger menu end
 
@@ -104,19 +106,19 @@ const firstSlide = document.getElementById("first-slide");
 const secondSlide = document.querySelector("#second-slide");
 const thirdSlide = document.getElementById("third-slide");
 
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+//// console.log(firstSlide);
+// console.log(secondSlide);
+// console.log(thirdSlide);
+// jodi 1 ta slide show korte chai tahole nicher ei 3 ta line ta comment out korte hobe 
 firstSlide.style.display = "flex";
 secondSlide.style.display = "none";
 thirdSlide.style.display = "none";
-
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-
-// console.log(firstSlide);
-// console.log(secondSlide);
-// console.log(thirdSlide);
-firstSlide.style.display = "flex";
-secondSlide.style.display = "flex";
-thirdSlide.style.display = "flex";
+// jodi 3 ta slide show korte chai tahole ei 3 ta line ta comment out korte hobe 
+// firstSlide.style.display = "flex";
+// secondSlide.style.display = "flex";
+// thirdSlide.style.display = "flex";
 // console.log(prevBtn);
 // console.log(nextBtn);
 
@@ -127,19 +129,32 @@ prevBtn.addEventListener("click", function () {
   const isThirdSlideActive = getComputedStyle(thirdSlide).display == "flex";
   console.log(isFirstSlideActive, isSecondSlideActive, isThirdSlideActive);
   console.log(isFirstSlideActive);
-  if (getComputedStyle(firstSlide).display == "flex") {
+  if (isFirstSlideActive) {
     firstSlide.style.display = "none";
+    secondSlide.style.display = "none";
+    thirdSlide.style.display = "flex";
+  } else if (isThirdSlideActive) {
     thirdSlide.style.display = "none";
     secondSlide.style.display = "flex";
-  } else if (getComputedStyle(secondSlide).display == "flex") {
-    secondSlide.style.display = "none";
     firstSlide.style.display = "none";
-    thirdSlide.style.display = "flex";
-  } else if (getComputedStyle(thirdSlide).display == "flex") {
+  } else if (isSecondSlideActive) {
     secondSlide.style.display = "none";
-    thirdSlide.style.display = "none";
     firstSlide.style.display = "flex";
+    thirdSlide.style.display = "none";
   }
+  // if (getComputedStyle(firstSlide).display == "flex") {
+  //   firstSlide.style.display = "none";
+  //   thirdSlide.style.display = "none";
+  //   secondSlide.style.display = "flex";
+  // } else if (getComputedStyle(secondSlide).display == "flex") {
+  //   secondSlide.style.display = "none";
+  //   firstSlide.style.display = "none";
+  //   thirdSlide.style.display = "flex";
+  // } else if (getComputedStyle(thirdSlide).display == "flex") {
+  //   secondSlide.style.display = "none";
+  //   thirdSlide.style.display = "none";
+  //   firstSlide.style.display = "flex";
+  // }
 });
 
 nextBtn.addEventListener("click", function () {
