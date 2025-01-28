@@ -1,28 +1,30 @@
 // fetch All Products
-// const productContainer = document.getElementById("product-container");
-// fetch("https://fakestoreapi.com/products")
-//   .then((res) => res.json())
-//   .then((products) => {
-//     console.log(products);
-//     const productItem = products.map((product) => {
-//       const productItemHTML = `
-//       <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-//             <a href="product_details.html?productId=${product.id}" class="block relative h-48 rounded overflow-hidden">
-//             <img alt="ecommerce" class="object-cover object-center w-full h-full &"src="${product.image}">
-//             </a>
-//             <div class="mt-4">
-//                 <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${product.category}</h3>
-//                 <h2 class="text-gray-900 title-font text-lg font-medium">${product.title}</h2>
-//                 <p class="mt-1">${product.price}</p>
-//             </div>
-//         </div>
-//         `;
-//       return productItemHTML;
-//     });
-//     console.log(productItem);
-//     console.log(productItem.join(""));
-//     productContainer.innerHTML = productItem.join("");
-//   });
+const productContainer = document.getElementById("products-container");
+fetch("https://fakestoreapi.com/products")
+  .then(res => res.json())
+  .then(products => {
+    console.log(products);
+    const productItem = products.map((product) => {
+      const productItemHTML = `
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <a href="product_details.html?productId=${product.id}" class="block relative h-48 rounded overflow-hidden">
+            <img alt="ecommerce" class="object-cover object-center w-full h-full &"src="${product.image}">
+            </a>
+            <div class="mt-4">
+                <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${product.category}</h3>
+                <h2 class="text-gray-900 title-font text-lg font-medium">${product.title}</h2>
+                <p class="mt-1">${product.price}</p>
+            </div>
+        </div>
+        `;
+       return(productItemHTML);
+    });
+    // console.log(productItems);
+    //  console.log(typeof productItems);
+    const productsHTML = productItem.join("");
+    console.log(productsHTML);
+    productContainer.innerHTML =productsHTML
+  });
 // const productsContainer = document.getElementById("products-container");
 // fetch("https://fakestoreapi.com/products/categories");
 
@@ -157,19 +159,19 @@ prevBtn.addEventListener("click", function () {
   // }
 });
 
-nextBtn.addEventListener("click", function () {
-  console.log("Next Button is Clicked");
-  if (getComputedStyle(firstSlide).display == "flex") {
-    firstSlide.style.display = "none";
-    thirdSlide.style.display = "none";
-    secondSlide.style.display = "flex";
-  } else if (getComputedStyle(secondSlide).display == "flex") {
-    secondSlide.style.display = "none";
-    firstSlide.style.display = "none";
-    thirdSlide.style.display = "flex";
-  } else if (getComputedStyle(thirdSlide).display == "flex") {
-    secondSlide.style.display = "none";
-    thirdSlide.style.display = "none";
-    firstSlide.style.display = "flex";
-  }
-});
+    nextBtn.addEventListener("click", function () {
+      console.log("Next Button is Clicked");
+      if (getComputedStyle(firstSlide).display == "flex") {
+        firstSlide.style.display = "none";
+        thirdSlide.style.display = "none";
+        secondSlide.style.display = "flex";
+      } else if (getComputedStyle(secondSlide).display == "flex") {
+        secondSlide.style.display = "none";
+        firstSlide.style.display = "none";
+        thirdSlide.style.display = "flex";
+      } else if (getComputedStyle(thirdSlide).display == "flex") {
+        secondSlide.style.display = "none";
+        thirdSlide.style.display = "none";
+        firstSlide.style.display = "flex";
+      }
+    });
