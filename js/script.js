@@ -70,25 +70,24 @@ const shopBtn1 = document.querySelector(".shop-btn-1");
 // console.log(shopBtn1);
 shopBtn1.addEventListener("click", function () {
   // console.log("This shop button is clicked");
-  console.log(window.location.href)
-  console.log("navigating to shop.html")
+  console.log(window.location.href);
+  console.log("navigating to shop.html");
   window.location.href = "http://127.0.0.1:5500/Shop.html";
-})
+});
 
 const shopBtn2 = document.querySelector(".shop-btn-2");
 // console.log(shopBtn2);
 shopBtn2.addEventListener("click", function () {
   // console.log("This shop button is clicked")
-  console.log(window.location.href)
-  console.log("navigating to shop.html")
+  console.log(window.location.href);
+  console.log("navigating to shop.html");
   window.location.href = "http://127.0.0.1:5500/shop.html";
-})
+});
 
 const shopBtn3 = document.querySelector(".shop-btn-3");
 // console.log(shopBtn3);
 shopBtn3.addEventListener("click", function () {
   console.log("This shop button is clicked");
- 
   console.log("navigating to shop.html");
   window.location.href = "http://127.0.0.1:5500/shop.html";
 });
@@ -107,8 +106,8 @@ const thirdSlide = document.getElementById("third-slide");
 secondSlide.style.display = "none";
 thirdSlide.style.display = "none";
 
-// const prevBtn = document.getElementById("prev");
-// const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
 
 // console.log(firstSlide);
 // console.log(secondSlide);
@@ -116,54 +115,31 @@ thirdSlide.style.display = "none";
 // firstSlide.style.display = "flex";
 // secondSlide.style.display = "flex";
 // thirdSlide.style.display = "flex";
-// console.log(preBtn);
+// console.log(prevBtn);
 // console.log(nextBtn);
 
-// prevBtn.addEventListener("click", function () {
-//   // console.log("Previous Button is clicked")
-//   const isFirstSlideActive = getComputedStyle(firstSlide).display == "flex";
-//   const isSecondSlideActive = getComputedStyle(secondSlide).display == "flex";
-//   const isThirdSlideActive = getComputedStyle(thirdSlide).display == "flex";
-//   // console.log(isFirstSlideActive, /*isSecondSlideActive, isThirdSlideActive*/);
-//   // console.log(isFirstSlideActive);
+prevBtn.addEventListener("click", function () {
+  // console.log("previous button is clicked");
+  const isFirstSlideActive = getComputedStyle(firstSlide).display == "flex";
+  const isSecondSlideActive = getComputedStyle(secondSlide).display == "flex";
+  const isThirdSlideActive = getComputedStyle(thirdSlide).display == "flex";
+  console.log(isFirstSlideActive, isSecondSlideActive, isThirdSlideActive);
+  console.log(isFirstSlideActive);
+});
 
-//   if (isFirstSlideActive) {
-//     firstSlide.style.display = "none";
-//     secondSlide.style.display = "none";
-//     thirdSlide.style.display = "flex";
-//   } else if (isThirdSlideActive) {
-//     thirdSlide.style.display = "none";
-//     secondSlide.style.display = "flex";
-//     firstSlide.style.display = "none";
-//   } else if (isSecondSlideActive) {
-//     secondSlide.style.display = "none";
-//     firstSlide.style.display = "flex";
-//     thirdSlide.style.display = "none";
-//   }
-// });
-
-// nextBtn.addEventListener("click", function () {
-  // console.log("Next Button is clicked");
-  // console.log("firstSlide is getting out")
-  // firstSlide.style.display = "none"
-  // console.log("2nd slide is getting in")
-  // secondSlide.style.display = "flex"
-  // const isFirstSlideActive = getComputedStyle(firstSlide).display == "flex";
-  // const isSecondSlideActive = getComputedStyle(secondSlide).display == "flex";
-  // const isThirdSlideActive = getComputedStyle(thirdSlide).display == "flex";
-  // console.log(isFirstSlideActive, isSecondSlideActive, isThirdSlideActive);
-  // console.log(isFirstSlideActive);
-//   if (getComputedStyle(firstSlide).display == "flex") {
-//     firstSlide.style.display = "none";
-//     thirdSlide.style.display = "none";
-//     secondSlide.style.display = "flex";
-//   } else if (getComputedStyle(secondSlide).display == "flex") {
-//     secondSlide.style.display = "none";
-//     firstSlide.style.display = "none";
-//     thirdSlide.style.display = "flex";
-//   } else if (getComputedStyle(thirdSlide).display == "flex") {
-//     secondSlide.style.display = "none";
-//     thirdSlide.style.display = "none";
-//     firstSlide.style.display = "flex";
-//   }
-// });
+nextBtn.addEventListener("click", function () {
+  console.log("Next Button is Clicked");
+  if (getComputedStyle(firstSlide).display == "flex") {
+    firstSlide.style.display = "none";
+    thirdSlide.style.display = "none";
+    secondSlide.style.display = "flex";
+  } else if (getComputedStyle(secondSlide).display == "flex") {
+    secondSlide.style.display = "none";
+    firstSlide.style.display = "none";
+    thirdSlide.style.display = "flex";
+  } else if (getComputedStyle(thirdSlide).display == "flex") {
+    secondSlide.style.display = "none";
+    thirdSlide.style.display = "none";
+    firstSlide.style.display = "flex";
+  }
+});
