@@ -1,4 +1,4 @@
-// fetch All Products
+// fetch All Products start
 const productContainer = document.getElementById("products-container");
 fetch("https://fakestoreapi.com/products")
   .then(res => res.json())
@@ -15,11 +15,11 @@ fetch("https://fakestoreapi.com/products")
                 <h2 class="text-gray-900 title-font text-lg font-medium">${product.title}</h2>
                 <p class="mt-1">${product.price}</p>
             </div>
-        </div>
+      </div>
         `;
-       return(productItemHTML);
+        return(productItemHTML);
     });
-    // console.log(productItems);
+    // console.log(productItems); 
     //  console.log(typeof productItems);
     const productsHTML = productItem.join("");
     console.log(productsHTML);
@@ -27,6 +27,7 @@ fetch("https://fakestoreapi.com/products")
   });
 // const productsContainer = document.getElementById("products-container");
 // fetch("https://fakestoreapi.com/products/categories");
+// fetch All Products end 
 
 // // Hamburger menu start
 const hambuergerBtn = document.getElementById("hambuerger-menu");
