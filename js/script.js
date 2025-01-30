@@ -1,5 +1,5 @@
 // fetch All Products start
-const productContainer = document.getElementById("products-container");
+const productContainer = document.getElementById("product-container");
 fetch("https://fakestoreapi.com/products")
   .then(res => res.json())
   .then(products => {
@@ -7,7 +7,8 @@ fetch("https://fakestoreapi.com/products")
     const productItem = products.map((product) => {
       const productItemHTML = `
       <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a href="product_details.html?productId=${product.id}" class="block relative h-48 rounded overflow-hidden">
+            <a href="product_details.html?productId=${product.id}" 
+            class="block relative h-48 rounded overflow-hidden">
             <img alt="ecommerce" class="object-cover object-center w-full h-full &"src="${product.image}">
             </a>
             <div class="mt-4">
